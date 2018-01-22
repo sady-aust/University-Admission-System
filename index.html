@@ -4,6 +4,8 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+
+
     <title></title>
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css">
@@ -254,26 +256,27 @@
              </div>
 
              <div class="modal-body">
-               <form action="" method="POST">
+               <form action="adminlogin.php" method="POST">
                  <div class="form-group">
                     <label >User Name</label>
-                    <input type="text" class="form-control" placeholder="UserName">
+                    <input type="text" class="form-control" name="username" placeholder="User Name">
                   </div>
                   <div class="form-group">
                     <label >Password</label>
-                    <input type="text"class=" form-control" placeholder="Password">
+                    <input type="text"class=" form-control" placeholder="Password" name="password">
                   </div>
-               </form>
-             </div>
+              
+
 
              <div class="modal-footer">
-                <button class="btn btn-primary">Login</button>
+               <input type="submit" class="btn btn-primary" value="Log In" name="Login">
                 <button class="btn btn-primary" data-dismiss="modal">Close</button>
               </div>
+               </form>
            </div>
           </div>
         </div>
-
+</div>
 
         <div class="col-sm-12 footer">
           <p style="text-muted">&copyRight CSE3100 Project</p>

@@ -1,9 +1,14 @@
+<?php
+session_start();
+?>
 <!DOCTYPE html>
 <html>
 <head>
 	<title>Admin</title>
 	<link rel="stylesheet" href="css/style.css">
   <link rel="stylesheet" href="css/font-awesome.min.css">
+
+	<meta http-equiv="refresh" content="url=adminpannel.php">
 
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css">
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
@@ -41,13 +46,15 @@
     <div class="col-sm-2 hidden-md-down" id="sidebar">
       <div class="sidebar-header">
       	<h5><i class="fa fa-user-circle  fa-2x ag" aria-hidden="true"></i>
-<small> Welcome</small>Toufiq</h5>
+<small> Welcome </small><?php
+            echo $_SESSION["adminName"];
+            ?></h5>
       	<hr>
       </div>
       <div class="sidebar-content">
       	<ul class="sidebar-content-list">
       		<li>
-      		<a href="adminpannel.html" class="active"><i class="fa fa-home" aria-hidden="true"></i>
+      		<a href="adminpannel.php" class="active"><i class="fa fa-home" aria-hidden="true"></i>
 Overview</a>
       		</li>
       		<li>
@@ -55,7 +62,7 @@ Overview</a>
 Upload</a>
       		</li>
       		<li>
-      			<a href="#"><i class="fa fa-user" aria-hidden="true"></i>
+      			<a href="adminprofile.php"><i class="fa fa-user" aria-hidden="true"></i>
 Profile</a>
       		</li>
       		
