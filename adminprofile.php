@@ -59,7 +59,7 @@ session_start();
         Overview</a>
       </li>
       <li>
-       <a href="upload.html"><i class="fa fa-upload" aria-hidden="true"></i>
+       <a href="upload.php"><i class="fa fa-upload" aria-hidden="true"></i>
        Upload</a>
      </li>
      <li>

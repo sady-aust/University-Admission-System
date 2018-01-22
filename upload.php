@@ -1,4 +1,7 @@
-	<!DOCTYPE html>
+<?php
+session_start();
+?>
+<!DOCTYPE html>
 	<html>
 	<head>
 		<title>Admin</title>
@@ -40,8 +43,10 @@
 
 			<div class="col-sm-2 hidden-md-down" id="sidebar">
 				<div class="sidebar-header">
-					<h5><i class="fa fa-user-circle  fa-2x ag" aria-hidden="true"></i>
-						<small> Welcome</small>Toufiq</h5>
+                    <h5><i class="fa fa-user-circle  fa-2x ag" aria-hidden="true"></i>
+                        <small> Welcome </small><?php
+                        echo $_SESSION["adminName"];
+                        ?></h5>
 						<hr>
 					</div>
 					<div class="sidebar-content">
@@ -51,7 +56,7 @@
 								Overview</a>
 							</li>
 							<li>
-								<a href="upload.html"><i class="fa fa-upload" aria-hidden="true"></i>
+								<a href="upload.php"><i class="fa fa-upload" aria-hidden="true"></i>
 								Upload</a>
 							</li>
 							<li>
