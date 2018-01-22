@@ -1,0 +1,100 @@
+
+.loginformclass{
+border: 1px solid blue;
+padding: 20px;
+padding-left:
+}
+.importantLinksclass{
+  border: 1px solid black;
+}
+.importantLinksclass h4{
+  background-color: black;
+  color: white;
+  text-align: center;
+}
+.notificationclass{
+  border: 1px solid black;
+}
+
+.notificationclass h4{
+  background-color: black;
+  color: white;
+  text-align: center;
+}
+
+.loginclass{
+  margin-top: 40px;
+
+}
+
+
+#loginform{
+border: 1px solid black;
+}
+.footer {
+   position: fixed;
+   bottom: 0;
+   width: 100%;
+   background-color: #212529;
+   color: white;
+   text-align: center;
+   height: 50px;
+}
+
+/*admissionfrom file*/
+.formBorder{
+  border: 1px solid black;
+
+}
+.formheading{
+  text-align: center;
+}
+
+/*admin*/
+#sidebar {
+  height: 100%;
+  background: #efefec;
+}
+
+.sidebar-header{
+  text-align: center;
+  padding-top: 15px;
+}
+.sidebar-content-list{
+  list-style: none;
+
+}
+.sidebar-content-list li{
+  margin-top: 10px;
+  padding: 10px;
+
+}
+.sidebar-content-list li a{
+  color: black;
+  width: 100px;
+}
+.sidebar-content-list li a:hover{
+ background-color: black;
+ color: white;
+ width: 100%;
+}
+.sidebar-content-list li a:link{
+ text-decoration: none;
+}
+
+#main-content .totalapply{
+background-color: #007bff;
+height: 150px;
+}
+#main-content .engineeringapply{
+background-color: #28a745;
+height: 150px;
+}
+#main-content .architectureapply{
+background-color: #ff5722;
+height: 150px;
+}
+#main-content .pendinga{
+background-color: #cddc39;
+height: 150px;
+}

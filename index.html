@@ -1,0 +1,284 @@
+  <!DOCTYPE html>
+  <html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title></title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.6/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js"></script>
+
+    <style media="">
+    fieldset.fsStyle {
+      border: 1px solid #999999;
+      padding: 4px;
+      margin: 5px;
+
+    }
+    legend.legendStyle {
+      font-size: 90%;
+      color: #888888;
+      background-color: transparent;
+      font-weight: bold;
+    }
+
+    legend {
+      width: auto;
+      border-bottom: 0px;
+    }
+
+    tr{
+      align: center;
+    }
+  </style>
+
+</head>
+
+<body>
+  <div class="container mycontainer">
+
+    <div class="row">
+      <div class="col-sm-12">
+
+        <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
+          <!-- Brand/logo -->
+          <a class="navbar-brand" href="#">University Admission System</a>
+
+          <!-- Links -->
+          <ul class="navbar-nav">
+            <li class="nav-item">
+              <a class="nav-link" href="#">Home</a>
+            </li>
+
+            <li class="nav-item">
+              <a class="nav-link" href="#">Notice</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">About Us</a>
+            </li>
+          </ul>
+
+          <ul class="nav navbar-nav ml-auto">
+            <li class="nav-item">
+              <button class="btn btn-primary" data-toggle = "modal" data-target ="#adminModal">
+                Admin
+              </button>
+            </li>
+          </ul>
+        </nav>
+      </div>
+    </div>
+    <div class="row">
+     <div class="col-sm-12">
+      <div class="carousel slide" data-interval="2000" id="imgcarousel" data-ride = "carousel">
+       <!--Indecators-->
+       <ul class="carousel-indicators">
+        <li data-target= "#imgcarousel" data-slide-to = "0" class="active"></li>
+        <li data-target= "#imgcarousel" data-slide-to= "1"></li>
+      </ul>
+      <!-- Wrapper for slides -->
+      <div  class="carousel-inner">
+        <div class="carousel-item active">
+          <img src="images/austimage1.png" alt="" class="img-responsive" width="1200">
+        </div>
+        <div class="carousel-item">
+          <img src="images/austimage.png" alt="" class="img-responsive"  width="1200">
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
+<div class="row">
+  <div class="col-sm-3">
+    <div class="importantLinksclass">
+      <h4 class="">Important Links</h4>
+      <ul>
+        <li>
+          <a href="#">University Prospectus</a>
+        </li>
+        <li>
+          <a href="#">Admission Procedure</a>
+        </li>
+        <li>
+          <a href="#">Important Dates</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+  <div class="col-sm-6 loginclass">
+    <div id="admission">
+      <p>For Apply Please Click <strong>Apply</strong>
+        <span>
+          <button type="button" class="btn btn-primary" data-toggle = "collapse" data-target = "#loginform">
+            Apply
+          </button>
+        </span>
+      </p>
+
+      <div class="collapse " id="loginform">
+        <form class="" action="index.html" method="post">
+          <fieldset class="fsStyle">
+            <legend class="legendStyle">HSC</legend>
+            <table >
+              <tr >
+                <td>
+                  <label for="">HSC ROLL</label>
+                </td>
+                <td colspan="2">
+                  <input type="text" class="form-control" name="" value="">
+                </td>
+              </tr>
+              <tr>
+
+                <td>
+                  <label for="">Board</label>
+                </td>
+                <td>
+                  <select class="form-control" name="">
+                    <option value="">Dhaka</option>
+                    <option value="">Chittagong</option>
+                    <option value="">Rajshahi</option>
+                    <option value="">barishal</option>
+                    <option value="">Sylhet</option>
+                    <option value="">Rangpur</option>
+                  </select>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <label for="">Year</label>
+                </td>
+                <td>
+                  <input type="text" class="form-control" name="" value="">
+                </td></tr>
+                <tr>
+
+                </table>
+              </fieldset>
+
+
+              <fieldset class="fsStyle">
+                <legend class="legendStyle">SSC</legend>
+                <table>
+                  <tr>
+
+                    <td>
+                      <label for="">SSC ROLL</label>
+                    </td>
+                    <td>
+                      <input type="text" class="form-control" name="" value="">
+                    </td>
+                  </tr>
+                  <tr>
+
+                    <td>
+                      <label for="">Board</label>
+                    </td>
+                    <td>
+                      <select class="form-control" name="">
+                        <option value="">Dhaka</option>
+                        <option value="">Chittagong</option>
+                        <option value="">Rajshahi</option>
+                        <option value="">barishal</option>
+                        <option value="">Sylhet</option>
+                        <option value="">Rangpur</option>
+                      </select>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <label for="">Year</label>
+                    </td>
+                    <td>
+                      <input type="text" class="form-control" name="" value="">
+                    </td></tr>
+                    <tr>
+
+
+                    </table>
+
+                  </fieldset>
+
+                  <table>
+                    <tr>
+                      <td></td>
+                      <td>
+                        <input type="submit" name="" value="Submit" class="btn btn-primary" style="margin-left:180px; margin-right:180px">
+                      </td>
+                    </tr>
+
+                  </table>
+                </form>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-sm-3">
+            <div class="notificationclass">
+              <h4 >Notifications</h4>
+              <ul>
+                <li>
+                  <a href="#">Admission notice has been published</a>
+                </li>
+                <li>
+                  <a href="#">Seat plan has been published</a>
+                </li>
+                <li>
+                  <a href="#">Notice 2</a>
+                </li>
+                <li>
+                  <a href="#">Notice 3</a>
+                </li>
+                <li>
+                  <a href="#">Notice 4</a>
+                </li>
+                <li>
+                  <a href="#">Notice 5</a>
+                </li>
+              </ul>
+            </div>
+          </div>
+
+        </div>
+
+        <!--Modal For Admin LogIn-->
+      <div class="modal fade" id="adminModal" >
+          <div class="modal-dialog">
+             <div class="modal-content">
+             <div class="modal-header">
+               <h4 class="modal-title">Admin Login</h4>
+             </div>
+
+             <div class="modal-body">
+               <form action="" method="POST">
+                 <div class="form-group">
+                    <label >User Name</label>
+                    <input type="text" class="form-control" placeholder="UserName">
+                  </div>
+                  <div class="form-group">
+                    <label >Password</label>
+                    <input type="text"class=" form-control" placeholder="Password">
+                  </div>
+               </form>
+             </div>
+
+             <div class="modal-footer">
+                <button class="btn btn-primary">Login</button>
+                <button class="btn btn-primary" data-dismiss="modal">Close</button>
+              </div>
+           </div>
+          </div>
+        </div>
+
+
+        <div class="col-sm-12 footer">
+          <p style="text-muted">&copyRight CSE3100 Project</p>
+        </div>
+
+      </div>
+    </body>
+    </html>
