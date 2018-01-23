@@ -35,9 +35,9 @@ session_start();
 
     <ul class="nav navbar-nav ml-auto">
       <li class="nav-item">
-        <button class="btn btn-primary" data-toggle = "modal" data-target ="#adminModal">
-         Log Out
-       </button>
+          <form action="logout.php" method="post">
+              <input type="submit" class="btn btn-primary" value="Log Out"></input>
+          </form>
      </li>
    </ul>
  </nav>

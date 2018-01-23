@@ -9,7 +9,7 @@ $databaseName = "universityadmissionsystem";
 $tableName = "admin";
 
 //Table Colamns Name
-$ADMINID = "adminId";
+$ADMINID = "AdminId";
 $ADMINNAME = "Name";
 $PASSWORD = "Password";
 $EMAIL = "Email";
@@ -29,14 +29,22 @@ else{
            $selectQuery = "SELECT * FROM ".$tableName." WHERE UserName="."'".$adminUserName."'"."AND Password="."'".$adminPasswrod."'";
            $result = mysqli_query($connection,$selectQuery);
            $row = mysqli_fetch_assoc($result);
-          // echo $row[$ADMINID]." ".$row[$ADMINNAME]." ".$row[$USERNAME]." ".$row[$EMAIL];
-           $_SESSION["adminId"] = $row[$ADMINID];
-           $_SESSION["adminName"] = $row[$ADMINNAME];
-           $_SESSION["username"] = $row[$USERNAME];
-           $_SESSION["email"] = $row[$EMAIL];
 
-            header("location: adminpannel.php");
-            exit;
+           if(strcmp($adminUserName,$row[$USERNAME])==0 && strcmp($adminPasswrod,$row[$PASSWORD])==0) {
+
+               $_SESSION["adminId"] = $row[$ADMINID];
+               $_SESSION["adminName"] = $row[$ADMINNAME];
+               $_SESSION["username"] = $row[$USERNAME];
+               $_SESSION["email"] = $row[$EMAIL];
+
+               header("location: adminpannel.php");
+               exit;
+           }
+           else{
+               header("location: index.html");
+
+               exit;
+           }
        }
        else{
 

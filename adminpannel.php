@@ -1,5 +1,18 @@
 <?php
 session_start();
+include "DatabseConnection.php";
+//table Name
+$UPLOADTABLENAME = "Upload";
+$ADMINTABLENAME = "Admin";
+
+//Column Name
+$ADMINID = "AdminId";
+$ADMINNAME = "Name";
+$DATE = "UploadDate";
+$FILENAME = "Filename";
+$COMMENT = "Comment";
+$UPLOADSECTION = "UploadSection"
+
 ?>
 <!DOCTYPE html>
 <html>
@@ -27,16 +40,17 @@ session_start();
 </head>
 <body>
 	<div class=" h-100">
-		 <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
+		 <nav class="navbar navbar-expand-sm bg-dark navbar-dark ">
           <!-- Brand/logo -->
           <a class="navbar-brand" href="#">University Admission System</a>
 
   
           <ul class="nav navbar-nav ml-auto">
             <li class="nav-item">
-              <button class="btn btn-primary" data-toggle = "modal" data-target ="#adminModal">
-               Log Out
-              </button>
+                <form action="logout.php" method="post">
+                    <input type="submit" class="btn btn-primary" value="Log Out">
+                </form>
+
             </li>
           </ul>
         </nav>
@@ -45,8 +59,7 @@ session_start();
 
     <div class="col-sm-2 hidden-md-down" id="sidebar">
       <div class="sidebar-header">
-      	<h5><i class="fa fa-user-circle  fa-2x ag" aria-hidden="true"></i>
-<small> Welcome </small><?php
+      	<h5><i class="fa fa-user-circle  fa-2x ag" aria-hidden="true"></i><small> Welcome </small><?php
             echo $_SESSION["adminName"];
             ?></h5>
       	<hr>
@@ -54,23 +67,17 @@ session_start();
       <div class="sidebar-content">
       	<ul class="sidebar-content-list">
       		<li>
-      		<a href="adminpannel.php" class="active"><i class="fa fa-home" aria-hidden="true"></i>
-Overview</a>
+      		<a href="adminpannel.php" class="active"><i class="fa fa-home" aria-hidden="true"></i>Overview</a>
       		</li>
       		<li>
-      			<a href="upload.php"><i class="fa fa-upload" aria-hidden="true"></i>
-Upload</a>
+      			<a href="upload.php"><i class="fa fa-upload" aria-hidden="true"></i>Upload</a>
       		</li>
       		<li>
-      			<a href="adminprofile.php"><i class="fa fa-user" aria-hidden="true"></i>
-Profile</a>
+      			<a href="adminprofile.php"><i class="fa fa-user" aria-hidden="true"></i>Profile</a>
       		</li>
       		
       		<li>
-            
-
-      			<a href="#"><i class="fa fa-cog" aria-hidden="true"></i>
-Settings</a>
+               <a href="#"><i class="fa fa-cog" aria-hidden="true"></i>Settings</a>
       		</li>
       		
       	</ul>
@@ -120,28 +127,41 @@ Settings</a>
       	<h4 style="margin-top: 15px; margin-bottom: 15px;">Feeds</h4>
       </div>
       <div class="row">
-      	<table class="table table-striped">
+      	<table class="table table-striped table-bordered" style="text-align: center">
       		<thead>
       			<th>Event</th>
       			<th>Time/Date</th>
       		</thead>
       		<tbody>
-      			<tr>
-      				<td>Toufiq Upload Result</td>
-      				<td>15-1-18</td>
-      			</tr>
-      			<tr>
-      				<td>Toufiq Upload Set Plan</td>
-      				<td>15-1-18</td>
-      			</tr>
-      			<tr>
-      				<td>Toufiq Upload Transection</td>
-      				<td>15-1-18</td>
-      			</tr>
-      			<tr>
-      				<td>Toufiq Upload a Notice</td>
-      				<td>15-1-18</td>
-      			</tr>
+      			<?php
+
+                $connection = createConnection();
+
+                $SELECTQUERYFROMUPLOADTABLE = "SELECT ".$ADMINTABLENAME.".".$ADMINNAME.",".$DATE.",".$FILENAME.",".$COMMENT." FROM ".$UPLOADTABLENAME.
+                    " INNER JOIN ".$ADMINTABLENAME." ON ".$UPLOADTABLENAME.".".$ADMINID." = ".$ADMINTABLENAME.".".$ADMINID;
+
+                $result = mysqli_query($connection,$SELECTQUERYFROMUPLOADTABLE);
+               if(mysqli_num_rows($result)>0){
+                   while ($row = mysqli_fetch_assoc($result)){
+                       ?>
+
+                       <tr>
+                           <td>
+                               <?php
+                                    echo $row[$ADMINNAME]." Uploaded ".$row[$FILENAME];
+                               ?>
+                           </td>
+                           <td>
+                               <?php
+                               echo $row[$DATE];
+                               ?>
+                           </td>
+                       </tr>
+
+                       <?php
+                   }
+               }
+                ?>
       		</tbody>
       	</table>
       </div>

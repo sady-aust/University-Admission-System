@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jan 22, 2018 at 04:07 PM
+-- Generation Time: Jan 22, 2018 at 09:38 PM
 -- Server version: 10.1.28-MariaDB
 -- PHP Version: 7.1.11
 
@@ -29,9 +29,9 @@ SET time_zone = "+00:00";
 --
 
 CREATE TABLE `admin` (
-  `adminId` int(11) NOT NULL,
+  `AdminId` int(11) NOT NULL,
   `Name` varchar(300) NOT NULL,
-  `UserName` varchar(200) NOT NULL,
+  `UserName` varchar(300) NOT NULL,
   `Password` varchar(200) NOT NULL,
   `Email` varchar(200) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
@@ -40,9 +40,21 @@ CREATE TABLE `admin` (
 -- Dumping data for table `admin`
 --
 
-INSERT INTO `admin` (`adminId`, `Name`, `UserName`, `Password`, `Email`) VALUES
-(1, 'Md. Toufiqul Islam', 'toufiq97', '123', 'toufiq.austcse@gmail.com'),
-(2, 'Susmoy Chakraborty', 'susmoy114', 'bd101', 'susmoy@gmail.com');
+INSERT INTO `admin` (`AdminId`, `Name`, `UserName`, `Password`, `Email`) VALUES
+(1, 'Md. Toufiqul Islam', 'toufiq97', '123', 'toufiq.austcse@gmail.com');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `upload`
+--
+
+CREATE TABLE `upload` (
+  `UploadId` int(11) NOT NULL,
+  `AdminId` int(11) NOT NULL,
+  `UploadDate` date DEFAULT NULL,
+  `FileName` varchar(500) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Indexes for dumped tables
@@ -52,9 +64,16 @@ INSERT INTO `admin` (`adminId`, `Name`, `UserName`, `Password`, `Email`) VALUES
 -- Indexes for table `admin`
 --
 ALTER TABLE `admin`
-  ADD PRIMARY KEY (`adminId`),
+  ADD PRIMARY KEY (`AdminId`),
   ADD UNIQUE KEY `UserName` (`UserName`),
   ADD UNIQUE KEY `Email` (`Email`);
+
+--
+-- Indexes for table `upload`
+--
+ALTER TABLE `upload`
+  ADD PRIMARY KEY (`UploadId`),
+  ADD KEY `AdminId` (`AdminId`);
 
 --
 -- AUTO_INCREMENT for dumped tables
@@ -64,7 +83,23 @@ ALTER TABLE `admin`
 -- AUTO_INCREMENT for table `admin`
 --
 ALTER TABLE `admin`
-  MODIFY `adminId` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `AdminId` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+
+--
+-- AUTO_INCREMENT for table `upload`
+--
+ALTER TABLE `upload`
+  MODIFY `UploadId` int(11) NOT NULL AUTO_INCREMENT;
+
+--
+-- Constraints for dumped tables
+--
+
+--
+-- Constraints for table `upload`
+--
+ALTER TABLE `upload`
+  ADD CONSTRAINT `upload_ibfk_1` FOREIGN KEY (`AdminId`) REFERENCES `admin` (`AdminId`);
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
