@@ -1,3 +1,9 @@
+<?php
+session_start();
+$candidateHscInformation =  $_SESSION["HSCInformation"];
+$candidateSscInformation =  $_SESSION["SSCInformation"];
+?>
+
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -93,7 +99,7 @@ tr{
               <label for="">Name*</label>
             </td>
             <td>
-              <input type="text" class="form-control" name="" value="">
+              <input type="text" class="form-control" name="" value="<?php echo $candidateHscInformation["Name"];?>">
             </td>
           </tr>
           <tr>
@@ -101,7 +107,9 @@ tr{
               <label for="">Mother's Name*</label>
             </td>
             <td>
-              <input type="text" class="form-control" name="" value="">
+              <input type="text" class="form-control" name="" value=" <?php
+              echo $candidateHscInformation["Mother's Name"];
+              ?>">
             </td>
           </tr>
           <tr>
@@ -110,6 +118,7 @@ tr{
             </td>
             <td>
             <select class="form-control">
+                <option value="<?php echo $candidateHscInformation["Gender"];?>"><?php echo $candidateHscInformation["Gender"];?></option>
               <option value="Male">Male</option>
                 <option value="Female">Female</option>
             </select>
@@ -132,7 +141,7 @@ tr{
               <label for="">Date-Of-Birth*</label>
             </td>
             <td>
-              <input type="date" class="form-control" name="" value="">
+              <input type="text" class="form-control" name="" value="<?php echo $candidateHscInformation["Date of Birth"];?>">
             </td>
           </tr>
           <tr>
@@ -140,7 +149,7 @@ tr{
               <label for="">Father's Name's*</label>
             </td>
             <td>
-              <input type="text" class="form-control" name="" value="">
+              <input type="text" class="form-control" name="" value="<?php echo $candidateHscInformation["Father's Name"];?>">
             </td>
           </tr>
           <tr>
@@ -149,13 +158,14 @@ tr{
             </td>
             <td>
             <select class="form-control">
+                <option value="">Select</option>
               <option value="O+">O(+)</option>
               <option value="O-">O(-)</option>
               <option value="AB+">AB(+)</option>
               <option value="AB-">AB(-)</option>
               <option value="B+">B(+)</option>
               <option value="B-">B(-)</option>
-            </selected>
+            </select>
             </td>
           </tr>
           <tr>
@@ -176,14 +186,14 @@ tr{
                 <table>
                   <tr>
                     <td>
-                      <label for="">Are You Small <strong>Ethnic</strong></br><strong>Group</strong>/<strong>Tribal?</stron>*</label>
+                      <label for="">Are You Small <strong>Ethnic</strong></br><strong>Group</strong></strong>Tribal?</strong>*</label>
                     </td>
                     <td>
                       <select class="form-control">
                         <option value="">Select</option>
                       <option value="Yes">Yes</option>
                       <option value="No">No</option>
-                      </selected>
+                      </select>
                     </td>
                   </tr>
                 </table>
@@ -199,7 +209,7 @@ tr{
                         <option value="">Select</option>
                       <option value="Chittagong">Chittagong</option>
                       <option value="Sylhet">Sylhet</option>
-                      </selected>
+                      </select>
                     </td>
                   </tr>
                 </table>
@@ -249,7 +259,7 @@ tr{
               <option value="">barishal</option>
               <option value="">Sylhet</option>
               <option value="">Rangpur</option>
-            </selected>
+            </select>
             </td>
           </tr>
           <tr>
@@ -345,7 +355,7 @@ tr{
               <option value="">barishal</option>
               <option value="">Sylhet</option>
               <option value="">Rangpur</option>
-            </selected>
+            </select>
             </td>
           </tr>
           <tr>
@@ -406,7 +416,7 @@ tr{
               <label for="">Roll</label>
             </td>
             <td>
-              <input type="text" class="form-control" name="" value="">
+              <input type="text" class="form-control" name="" value="<?php echo $candidateSscInformation["Roll No"];?>">
             </td>
           </tr>
           <tr>
@@ -415,6 +425,7 @@ tr{
             </td>
             <td>
               <select class="form-control" name="">
+                  <option value="<?php echo $candidateSscInformation["Roll No"];?>"><?php echo $candidateSscInformation["Board"];?></option>
                 <option value="">Dhaka</option>
                 <option value="">Chittagong</option>
                 <option value="">Rajshahi</option>
@@ -429,7 +440,7 @@ tr{
               <label for="">Institute</label>
             </td>
             <td>
-            <input type="text" class="form-control" name="" value="">
+            <input type="text" class="form-control" name="" value="<?php echo $candidateSscInformation["Institute"];?>">
             </td>
           </tr>
 
@@ -442,7 +453,7 @@ tr{
               <label for="">Reg No(*)</label>
             </td>
             <td>
-              <input type="text" class="form-control" name="" value="">
+              <input type="text" class="form-control" name="" value="<?php echo $candidateSscInformation["Registration No"];?>">
             </td>
           </tr>
           <tr>
@@ -450,7 +461,7 @@ tr{
               <label for="">Passing Year</label>
             </td>
             <td>
-              <input type="text" class="form-control" name="" value="">
+              <input type="text" class="form-control" name="" value="<?php echo $candidateSscInformation["Passing Year"];?>">
             </td>
           </tr>
           <tr>
@@ -458,7 +469,7 @@ tr{
               <label for="">GPA*</label>
             </td>
             <td>
-              <input type="text" class="form-control" name="" value="">
+              <input type="text" class="form-control" name="" value="<?php echo $candidateSscInformation["GPA"];?>">
             </td>
           </tr>
 
@@ -479,7 +490,7 @@ tr{
               <label for="">Passing Year</label>
             </td>
             <td>
-              <input type="text" class="form-control" name="" value="">
+              <input type="text" class="form-control" name="" value="<?php echo $candidateHscInformation["Passing Year"];?>">
             </td>
           </tr>
           <tr>
@@ -487,7 +498,7 @@ tr{
               <label for="">Roll</label>
             </td>
             <td>
-              <input type="text" class="form-control" name="" value="">
+              <input type="text" class="form-control" name="" value="<?php echo $candidateHscInformation["Roll No"];?>">
             </td>
           </tr>
           <tr>
@@ -495,7 +506,7 @@ tr{
               <label for="">Reg No *</label>
             </td>
             <td>
-              <input type="text" class="form-control" name="" value="">
+              <input type="text" class="form-control" name="" value="<?php echo $candidateHscInformation["Registration No"];?>">
             </td>
           </tr>
           <tr>
@@ -503,7 +514,8 @@ tr{
               <label for="">Board</label>
             </td>
             <td>
-              <select class="form-control" name="">
+              <select class="form-control" name="" >
+                  <option value="<?php echo $candidateHscInformation["Board"];?>"><?php echo $candidateHscInformation["Board"];?></option>
                 <option value="">Dhaka</option>
                 <option value="">Chittagong</option>
                 <option value="">Rajshahi</option>
@@ -518,7 +530,7 @@ tr{
               <label for="">GPA *</label>
             </td>
             <td>
-            <input type="text" class="form-control" name="" value="">
+            <input type="text" class="form-control" name="" value="<?php echo $candidateHscInformation["GPA"];?>">
             </td>
           </tr>
 
@@ -535,7 +547,7 @@ tr{
               <label for="">Physics*</label>
             </td>
             <td>
-              <input type="text" class="form-control" name="" value="">
+              <input type="text" class="form-control" name="" value="<?php echo $candidateHscInformation["PHYSICS"];?>">
             </td>
           </tr>
           <tr>
@@ -543,7 +555,7 @@ tr{
               <label for="">Chemistry*</label>
             </td>
             <td>
-              <input type="text" class="form-control" name="" value="">
+              <input type="text" class="form-control" name="" value="<?php echo $candidateHscInformation["CHEMISTRY"];?>">
             </td>
           </tr>
           <tr>
@@ -551,7 +563,7 @@ tr{
               <label for="">Mathematics*</label>
             </td>
             <td>
-              <input type="text" class="form-control" name="" value="">
+              <input type="text" class="form-control" name="" value="<?php echo $candidateHscInformation["MATHEMATICS"];?>">
             </td>
           </tr>
           <tr>
@@ -559,7 +571,7 @@ tr{
               <label for="">English*</label>
             </td>
             <td>
-              <input type="text" class="form-control" name="" value="">
+              <input type="text" class="form-control" name="" value="<?php echo $candidateHscInformation["ENGLISH"];?>">
             </td>
           </tr>
           <tr>
@@ -567,7 +579,7 @@ tr{
               <label for="">Total</label>
             </td>
             <td>
-              <input type="text" class="form-control" name="" value="">
+              <input type="text" class="form-control" name="" value="<?php echo ($candidateHscInformation["PHYSICS"]+$candidateHscInformation["CHEMISTRY"]+$candidateHscInformation["MATHEMATICS"]+$candidateHscInformation["ENGLISH"])?>">
             </td>
           </tr>
 

@@ -1,6 +1,7 @@
 <?php
 
 session_start();
+include "DatabseConnection.php";
 
 $host = "localhost";
 $user = "root";
@@ -15,7 +16,7 @@ $PASSWORD = "Password";
 $EMAIL = "Email";
 $USERNAME = "UserName";
 
-$connection = mysqli_connect($host,$user,"",$databaseName);
+$connection = createConnection();
 
 if(!$connection){
     echo "There is an error ".mysqli_connect_error();
@@ -42,7 +43,6 @@ else{
            }
            else{
                header("location: index.html");
-
                exit;
            }
        }
