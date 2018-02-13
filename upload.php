@@ -1,6 +1,6 @@
 <?php
 session_start();
-include "DatabseConnection.php";
+include "DatabaseHandler.php";
 //table Name
 $UPLOADTABLENAME = "Upload";
 $ADMINTABLENAME = "Admin";
@@ -307,6 +307,7 @@ $UPLOADSECTION = "UploadSection"
 </div>
 <div class="tab-pane " id="transection">
  <h3>Upload Transection</h3>
+
 </div>
 </div>
 

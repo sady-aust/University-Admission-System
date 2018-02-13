@@ -1,7 +1,7 @@
 <?php
 
 session_start();
-include "DatabseConnection.php";
+include "DatabaseHandler.php";
 
 $host = "localhost";
 $user = "root";

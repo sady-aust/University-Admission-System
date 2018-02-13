@@ -1,6 +1,6 @@
 <?php
 session_start();
-include "DatabseConnection.php";
+include "DatabaseHandler.php";
  $file_name = $_FILES["uploadedFile"]["name"];
  $file_size = $_FILES["uploadedFile"]["size"];
  $file_type = $_FILES["uploadedFile"]["type"];

@@ -1,80 +1,75 @@
 <?php
-require_once "Classes/PHPExcel/IOFactory.php";
-;
+require_once "Classes/PHPExcel/IOFactory.php";;
 
 /*$inputFileName = './uploads/files/HSC18.xlsx';
 $excelObject = PHPExcel_IOFactory::load($inputFileName);
 echo $excelObject->getSheetCount();*/
 
-function getExcelObject($fileLocation){
+function getExcelObject($fileLocation)
+{
     $excelObject = PHPExcel_IOFactory::load($fileLocation);
     return $excelObject;
 }
 
-function getCandidateHSCInfromation(PHPExcel $excelObject,$hscRoll){
+function getCandidateHSCInfromation(PHPExcel $excelObject, $hscRoll)
+{
     $candidateHscInformation = array();
     $isFound = false;
 
-    $numberOfSheet =  $excelObject->getSheetCount();
+    $numberOfSheet = $excelObject->getSheetCount();
 
-    for($i=0;$i<$numberOfSheet;$i++){
+    for ($i = 0; $i < $numberOfSheet; $i++) {
         $sheetArray = $excelObject->getSheet($i)->toArray(null);
 
-       for($row=1;$row<count($sheetArray);$row++){
+        for ($row = 1; $row < count($sheetArray); $row++) {
 
 
+            //echo $sheetArray[$row][$column]."    ";
 
-               //echo $sheetArray[$row][$column]."    ";
+            if ($sheetArray[$row][0] == $hscRoll) {
 
-                 if($sheetArray[$row][0] == $hscRoll){
-
-                   for($column=0;$column<count($sheetArray[$row]);$column++){
+                for ($column = 0; $column < count($sheetArray[$row]); $column++) {
 //                       $candidateHscInformation[$sheetArray[0][$column]][] =$sheetArray[$row][$column];
-                       $candidateHscInformation[$sheetArray[0][$column]] = $sheetArray[$row][$column];
-                   }
-                   $isFound = true;
-                     break;
-                 }
+                    $candidateHscInformation[$sheetArray[0][$column]] = $sheetArray[$row][$column];
+                }
+                $isFound = true;
+                break;
+            }
 
 
+        }
 
-
-
-
-       }
-
-       if($isFound){
-           break;
-       }
+        if ($isFound) {
+            break;
+        }
     }
 
-    if($isFound) {
+    if ($isFound) {
         return $candidateHscInformation;
-    }
-    else{
+    } else {
         return null;
     }
 
 }
 
-function getCandidateSSCInfromation(PHPExcel $excelObject,$sscRoll){
+function getCandidateSSCInfromation(PHPExcel $excelObject, $sscRoll)
+{
     $candidateSscInformation = array();
     $isFound = false;
 
-    $numberOfSheet =  $excelObject->getSheetCount();
+    $numberOfSheet = $excelObject->getSheetCount();
 
-    for($i=0;$i<$numberOfSheet;$i++){
+    for ($i = 0; $i < $numberOfSheet; $i++) {
         $sheetArray = $excelObject->getSheet($i)->toArray(null);
 
-        for($row=1;$row<count($sheetArray);$row++){
-
+        for ($row = 1; $row < count($sheetArray); $row++) {
 
 
             //echo $sheetArray[$row][$column]."    ";
 
-            if($sheetArray[$row][0] == $sscRoll){
+            if ($sheetArray[$row][0] == $sscRoll) {
 
-                for($column=0;$column<count($sheetArray[$row]);$column++){
+                for ($column = 0; $column < count($sheetArray[$row]); $column++) {
 //                       $candidateHscInformation[$sheetArray[0][$column]][] =$sheetArray[$row][$column];
                     $candidateSscInformation[$sheetArray[0][$column]] = $sheetArray[$row][$column];
                 }
@@ -83,23 +78,19 @@ function getCandidateSSCInfromation(PHPExcel $excelObject,$sscRoll){
             }
 
 
-
-
-
-
         }
 
-        if($isFound){
+        if ($isFound) {
             break;
         }
     }
 
-    if($isFound) {
+    if ($isFound) {
         return $candidateSscInformation;
-    }
-    else{
+    } else {
         return null;
     }
 
 }
+
 ?>
